@@ -1,99 +1,130 @@
-Domain Study
-Domain: Healthcare / Hospital Management
+Stack Decision: 
 
-The project belongs to the Healthcare Information Management domain.
+For a capstone project, I recommend Java + Spring Boot + MySQL + React rather than only Core Java.
 
-Understanding the Domain 
+Recommended Stack:
 
-A hospital contains different departments and wards, each having multiple beds. A bed can have different states:
+| **Layer / Tool**    | **Technology**                | **Purpose in Hospital Bed Availability System** | **What It Handles**                              |
+| ------------------- | ----------------------------- | ----------------------------------------------- | ------------------------------------------------ |
+| **Frontend**        | HTML, CSS, JavaScript / React | Creates the user interface                      | Dashboard, bed status, forms, tables             |
+| **Backend**         | Java                          | Implements application logic                    | Bed allocation, patient management, availability |
+| **Framework**       | Spring Boot                   | Simplifies Java backend development             | REST APIs, services, controllers                 |
+| **Database**        | MySQL                         | Stores project data                             | Patients, beds, wards, users, allocations        |
+| **API**             | REST API                      | Connects frontend and backend                   | Sending and receiving data                       |
+| **IDE**             | VS Code                       | Used for writing and managing code              | Coding, debugging, terminal                      |
+| **Version Control** | Git                           | Tracks code changes                             | Commit, branch, version history                  |
+| **Repository**      | GitHub                        | Stores project online                           | Source code, documentation, collaboration        |
+| **Testing**         | Postman                       | Tests REST APIs                                 | GET, POST, PUT, DELETE requests                  |
+| **Build Tool**      | Maven                         | Manages Java project dependencies and builds    | Libraries, compilation, packaging                |
 
-             Hospital
-                |
-       --------------------
-       |        |         |
-    General    ICU    Emergency
-       |        |         |
-    Beds      Beds      Beds
+Architecture:
+
+
+             USER
+               |
+               ↓
+        React / Frontend
+               |
+               ↓
+          REST API
+               |
+               ↓
+        Spring Boot
+               |
+       ----------------
+       |              |
+   Services       Controllers
        |
- -------------------------
- |           |           |
-Available  Occupied   Maintenance
-Important Entities
-Entity	Purpose
-Hospital	Stores hospital information
-Ward	Represents hospital departments/wards
-Bed	Stores individual bed details
-Patient	Stores patient information
-Bed Allocation	Connects patient with a bed
-Staff	Users who manage the system
-Bed Status
+       ↓
+   Repository
+       |
+       ↓
+     MySQL
+Why this stack?
 
-You can use:
+Java:
 
-AVAILABLE
-OCCUPIED
-RESERVED
-MAINTENANCE
+   Object-oriented
+   Good for large applications
+   Strongly used in enterprise applications
 
-Example:
+Spring Boot
 
-Bed ID	Ward	Type	Status
-B101	General	Normal	AVAILABLE
-B102	General	Normal	OCCUPIED
-ICU01	ICU	ICU	AVAILABLE
-ICU02	ICU	ICU	MAINTENANCE
-E01	Emergency	Emergency	RESERVED
-3. Proposed Modules
+   Simplifies Java backend development
+   Supports REST APIs
+   Provides good project structure
 
-For a good capstone project, I recommend these modules:
+MySQL
 
-Module 1 — User Management
-Admin login
-Staff login
-User roles
-Module 2 — Hospital/Ward Management
-Add ward
-Update ward
-Delete ward
-View wards
-Module 3 — Bed Management
-Add bed
-Update bed
-Remove bed
-View all beds
-Search bed
-Module 4 — Bed Availability Tracking
-Available beds
-Occupied beds
-Reserved beds
-Maintenance beds
-Availability by ward
-Module 5 — Patient Management
-Add patient
-Update patient
-View patient
-Search patient
-Module 6 — Bed Allocation
-Assign bed to patient
-Transfer patient
-Release bed
-View allocation history
-Module 7 — Dashboard/Reports
+    Suitable for structured hospital data
+    Supports relationships between patients, beds, wards, and allocations
 
-Example:
+React
 
-=====================================
-       HOSPITAL BED DASHBOARD
-=====================================
+    Can provide an interactive dashboard
+    Useful for displaying real-time-style bed status
 
-Total Beds       : 250
-Available Beds   : 85
-Occupied Beds    : 145
-Reserved Beds    : 10
-Maintenance      : 10
+GitHub
 
-General          : 40 Available
-ICU              : 12 Available
-Emergency        : 8 Available
-Private          : 25 Available
-=====================================
+    Stores project source code
+    Tracks project versions
+    Useful for demonstrating your capstone work
+
+
+
+Database Design:
+
+A simple database structure can be:
+
+USER
+ |
+ |
+WARD -------- BED
+             |
+             |
+         ALLOCATION
+             |
+             |
+          PATIENT
+Tables
+
+users
+
+      user_id
+      name
+      email
+      password
+      role
+
+wards
+
+      ward_id
+      ward_name
+      ward_type
+      floor
+
+beds
+
+      bed_id
+      ward_id
+      bed_number
+      bed_type
+      status
+
+patients
+
+      patient_id
+      name
+      age
+      gender
+      phone
+      address
+
+bed_allocations
+
+      allocation_id
+      patient_id
+      bed_id
+      admission_date
+      discharge_date
+      status
