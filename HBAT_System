@@ -1,33 +1,99 @@
-Problem Statement:
-Project Title:
+Domain Study
+Domain: Healthcare / Hospital Management
 
-Hospital Bed Availability Tracking System
+The project belongs to the Healthcare Information Management domain.
 
-Problem:
+Understanding the Domain 
 
-Hospitals often need to manage a large number of beds across different wards such as General, ICU, Emergency, and Private rooms. When bed information is maintained manually or updated slowly, staff may have difficulty knowing which beds are currently available, occupied, reserved, or under maintenance.
+A hospital contains different departments and wards, each having multiple beds. A bed can have different states:
 
-This can lead to:
+             Hospital
+                |
+       --------------------
+       |        |         |
+    General    ICU    Emergency
+       |        |         |
+    Beds      Beds      Beds
+       |
+ -------------------------
+ |           |           |
+Available  Occupied   Maintenance
+Important Entities
+Entity	Purpose
+Hospital	Stores hospital information
+Ward	Represents hospital departments/wards
+Bed	Stores individual bed details
+Patient	Stores patient information
+Bed Allocation	Connects patient with a bed
+Staff	Users who manage the system
+Bed Status
 
-Delay in assigning beds
-Difficulty tracking vacant beds
-Manual errors
-Poor coordination between departments
-Difficulty monitoring ICU and emergency bed availability
-Proposed Solution
+You can use:
 
-The Hospital Bed Availability Tracking System is a software application that maintains the current status of hospital beds in a centralized system.
+AVAILABLE
+OCCUPIED
+RESERVED
+MAINTENANCE
 
-The system allows authorized hospital staff to:
+Example:
 
-Add and manage hospital beds
-View available beds
-Update bed status
-Assign beds to patients
-Release beds when patients are discharged
-Track beds by ward/type
-Search for available beds
-View bed availability statistics
-Main Objective
+Bed ID	Ward	Type	Status
+B101	General	Normal	AVAILABLE
+B102	General	Normal	OCCUPIED
+ICU01	ICU	ICU	AVAILABLE
+ICU02	ICU	ICU	MAINTENANCE
+E01	Emergency	Emergency	RESERVED
+3. Proposed Modules
 
-To develop a system that provides accurate and up-to-date information about hospital bed availability and helps hospital staff efficiently manage bed allocation.
+For a good capstone project, I recommend these modules:
+
+Module 1 — User Management
+Admin login
+Staff login
+User roles
+Module 2 — Hospital/Ward Management
+Add ward
+Update ward
+Delete ward
+View wards
+Module 3 — Bed Management
+Add bed
+Update bed
+Remove bed
+View all beds
+Search bed
+Module 4 — Bed Availability Tracking
+Available beds
+Occupied beds
+Reserved beds
+Maintenance beds
+Availability by ward
+Module 5 — Patient Management
+Add patient
+Update patient
+View patient
+Search patient
+Module 6 — Bed Allocation
+Assign bed to patient
+Transfer patient
+Release bed
+View allocation history
+Module 7 — Dashboard/Reports
+
+Example:
+
+=====================================
+       HOSPITAL BED DASHBOARD
+=====================================
+
+Total Beds       : 250
+Available Beds   : 85
+Occupied Beds    : 145
+Reserved Beds    : 10
+Maintenance      : 10
+
+General          : 40 Available
+ICU              : 12 Available
+Emergency        : 8 Available
+Private          : 25 Available
+=====================================
