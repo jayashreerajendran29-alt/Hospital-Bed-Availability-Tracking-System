@@ -1,0 +1,35 @@
+Problem Statement:
+Project Title:
+
+    *Hospital Bed Availability Tracking System
+
+Problem:
+
+     Hospitals often need to manage a large number of beds across different wards such as General, ICU, Emergency, and Private rooms. When bed information is maintained manually or updated slowly, staff may have difficulty knowing which beds are currently available, occupied, reserved, or under maintenance.
+
+This can lead to:
+
+ 1.Delay in assigning beds
+ 2.Difficulty tracking vacant beds
+ 3.Manual errors
+ 4.Poor coordination between departments
+ 5.Difficulty monitoring ICU and emergency bed availability
+
+Proposed Solution:
+
+        The Hospital Bed Availability Tracking System is a software application that maintains the current status of hospital beds in a centralized system.
+
+The system allows authorized hospital staff to:
+
+ 1.Add and manage hospital beds
+ 2.View available beds
+ 3.Update bed status
+ 4.Assign beds to patients
+ 5.Release beds when patients are discharged
+ 6.Track beds by ward/type
+ 7.Search for available beds
+ 8.View bed availability statistics
+
+Main Objective:
+
+          To develop a system that provides accurate and up-to-date information about hospital bed availability and helps hospital staff efficiently manage bed allocation.
