@@ -1,0 +1,130 @@
+Stack Decision:
+
+For a capstone project, I recommend Java + Spring Boot + MySQL + React rather than only Core Java.
+
+Recommended Stack:
+
+| **Layer / Tool**    | **Technology**                | **Purpose in Hospital Bed Availability System** | **What It Handles**                              |
+| ------------------- | ----------------------------- | ----------------------------------------------- | ------------------------------------------------ |
+| **Frontend**        | HTML, CSS, JavaScript / React | Creates the user interface                      | Dashboard, bed status, forms, tables             |
+| **Backend**         | Java                          | Implements application logic                    | Bed allocation, patient management, availability |
+| **Framework**       | Spring Boot                   | Simplifies Java backend development             | REST APIs, services, controllers                 |
+| **Database**        | MySQL                         | Stores project data                             | Patients, beds, wards, users, allocations        |
+| **API**             | REST API                      | Connects frontend and backend                   | Sending and receiving data                       |
+| **IDE**             | VS Code                       | Used for writing and managing code              | Coding, debugging, terminal                      |
+| **Version Control** | Git                           | Tracks code changes                             | Commit, branch, version history                  |
+| **Repository**      | GitHub                        | Stores project online                           | Source code, documentation, collaboration        |
+| **Testing**         | Postman                       | Tests REST APIs                                 | GET, POST, PUT, DELETE requests                  |
+| **Build Tool**      | Maven                         | Manages Java project dependencies and builds    | Libraries, compilation, packaging                |
+
+Architecture:
+
+
+             USER
+               |
+               ↓
+        React / Frontend
+               |
+               ↓
+          REST API
+               |
+               ↓
+        Spring Boot
+               |
+       ----------------
+       |              |
+   Services       Controllers
+       |
+       ↓
+   Repository
+       |
+       ↓
+     MySQL
+Why this stack?
+
+Java:
+
+   Object-oriented
+   Good for large applications
+   Strongly used in enterprise applications
+
+Spring Boot
+
+   Simplifies Java backend development
+   Supports REST APIs
+   Provides good project structure
+
+MySQL
+
+    Suitable for structured hospital data
+    Supports relationships between patients, beds, wards, and allocations
+
+React
+
+    Can provide an interactive dashboard
+    Useful for displaying real-time-style bed status
+
+GitHub
+
+    Stores project source code
+    Tracks project versions
+    Useful for demonstrating your capstone work
+
+
+
+Database Design:
+
+A simple database structure can be:
+
+USER
+ |
+ |
+WARD -------- BED
+             |
+             |
+         ALLOCATION
+             |
+             |
+          PATIENT
+Tables
+
+users
+
+      user_id
+      name
+      email
+      password
+      role
+
+wards
+
+      ward_id
+      ward_name
+      ward_type
+      floor
+
+beds
+
+      bed_id
+      ward_id
+      bed_number
+      bed_type
+      status
+
+patients
+
+      patient_id
+      name
+      age
+      gender
+      phone
+      address
+
+bed_allocations
+
+      allocation_id
+      patient_id
+      bed_id
+      admission_date
+      discharge_date
+      status
