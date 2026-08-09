@@ -1,0 +1,125 @@
+VS Code Setup:
+Step 1 — Install:
+You need:
+
+    1.VS Code
+    2.JDK
+    3.Git
+    4.MySQL
+    5.Node.js
+    6.Maven
+
+Step 2 — Check Java:
+    Open VS Code → Terminal and type:
+    java -version
+    Then:
+    javac -version
+
+Step 3 — Check Git:
+    git --version
+
+Step 4 — Create project folder:
+    mkdir hospital-bed-availability-system
+    cd hospital-bed-availability-system
+
+Step 5 — Open in VS Code:
+    code .
+
+Connect VS Code to GitHub:
+     After creating the GitHub repository:
+     git init
+     Then:
+     git add .
+     Commit:
+     git commit -m "Initial project setup"
+
+Connect your GitHub repository:
+
+     git remote add origin YOUR_GITHUB_REPOSITORY_URL
+     Then:
+     git branch -M main
+     git push -u origin main
+
+     After this, your project will be available in your GitHub repository.
+
+Recommended Development Order:
+
+Don't try to build everything at once.
+
+Phase 1 — Planning:  
+
+                   Problem Statement
+                         ↓
+                    Domain Study  
+                         ↓
+                    Requirements
+                         ↓
+                  Use Case Diagram
+                         ↓
+                     ER Diagram
+                         ↓
+                  Database Design
+
+Phase 2 — Backend:
+
+                 Spring Boot Project
+                         ↓
+                 MySQL Connection
+                         ↓
+                  Entity Classes
+                         ↓
+                    Repository
+                         ↓
+                     Service
+                         ↓
+                    Controller
+                         ↓
+                     REST API
+
+Phase 3 — Frontend:
+
+                       Login
+                         ↓
+                    Dashboard
+                         ↓
+                   Ward Management
+                         ↓
+                   Bed Management
+                         ↓
+                 Patient Management
+                         ↓
+                   Bed Allocation
+                         ↓
+                      Reports
+
+Phase 4 — Testing:
+
+Use Postman to test:
+
+           POST   /api/beds
+           GET    /api/beds
+           GET    /api/beds/available
+           PUT    /api/beds/{id}
+           DELETE /api/beds/{id}
+
+Final Capstone Structure:
+
+Your complete project can be presented as:
+
+       HOSPITAL BED AVAILABILITY
+            TRACKING SYSTEM
+                    |
+       -------------------------
+       |           |           |
+    Frontend     Backend     Database
+       |           |           |
+     React      Java/Spring   MySQL
+                   |
+              REST APIs
+                   |
+       -------------------------
+       |     |      |     |    |
+      Ward  Bed  Patient  Allocation
+                   |
+              Availability
+                 Tracking
