@@ -1,0 +1,110 @@
+Domain Study:
+Domain: Healthcare / Hospital Management
+
+    The project belongs to the Healthcare Information Management domain.
+
+Understanding the Domain:
+
+    A hospital contains different departments and wards, each having multiple beds. A bed can have different states:
+
+             Hospital
+                | 
+                                    --------------------
+       |        |         |
+    General    ICU    Emergency
+       |        |         |
+    Beds      Beds      Beds
+       |
+ -------------------------
+ |           |           |
+Available  Occupied   Maintenance
+
+       
+Important Entities:
+
+         Entity	                Purpose
+        1.Hospital	            Stores hospital information
+        2.Ward                   Represents hospital wards                           
+        3.Bed	                Stores individual bed details
+        4.Patient	            Stores patient information
+        5.Bed Allocation	        Connects patient with a bed
+        6.Staff	                Users who manage the system
+
+Bed Status:
+
+You can use:
+
+    AVAILABLE
+    OCCUPIED
+    RESERVED
+    MAINTENANCE
+
+Example:
+
+Bed ID	      Ward	         Type	        Status
+B101	     General	    Normal	       AVAILABLE
+B102	     General	    Normal	       OCCUPIED
+ICU01	     ICU	        ICU	           AVAILABLE
+ICU02	     ICU      	    ICU	           MAINTENANCE
+E01	         Emergency   	Emergency	   RESERVED
+
+
+Proposed Modules:
+
+For a good capstone project, I recommend these modules:
+
+Module 1 — User Management:
+    Admin login
+    Staff login
+    User roles
+
+Module 2 — Hospital/Ward Management:
+    Add ward
+    Update ward
+    Delete ward
+    View wards
+
+Module 3 — Bed Management:
+    Add bed
+    Update bed
+    Remove bed
+    View all beds
+    Search bed
+
+Module 4 — Bed Availability Tracking:
+    Available beds
+    Occupied beds
+    Reserved beds
+    Maintenance beds
+    Availability by ward
+
+Module 5 — Patient Management:
+    Add patient
+    Update patient
+    View patient
+    Search patient
+
+Module 6 — Bed Allocation:
+    Assign bed to patient
+    Transfer patient
+    Release bed
+    View allocation history:
+
+Module 7 — Dashboard/Reports:
+Example:
+
+=====================================
+       HOSPITAL BED DASHBOARD
+=====================================
+
+Total Beds       : 250
+Available Beds   : 85
+Occupied Beds    : 145
+Reserved Beds    : 10
+Maintenance      : 10
+
+General          : 40 Available
+ICU              : 12 Available
+Emergency        : 8 Available
+Private          : 25 Available
+=====================================
