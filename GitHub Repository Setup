@@ -1,0 +1,31 @@
+GitHub Repository Setup:
+
+    Create a repository with a professional name such as:
+
+    hospital-bed-availability-system
+
+Your GitHub structure can eventually look like:
+
+hospital-bed-availability-system
+│
+├── backend
+│   ├── src
+│   ├── pom.xml
+│   └── README.md
+│
+├── frontend
+│   ├── src
+│   ├── public
+│   └── package.json
+│
+├── database
+│   └── hospital_bed.sql
+│
+├── docs
+│   ├── requirements.md
+│   ├── domain-study.md
+│   └── er-diagram.png
+│
+├── screenshots
+│
+└── README.md
