@@ -1,0 +1,74 @@
+@startuml
+
+title Hospital Bed Availability Tracking System - Class Diagram
+
+class User {
+    - userId : int
+    - name : String
+    - email : String
+    - password : String
+    - role : String
+    + login()
+    + logout()
+}
+
+class Hospital {
+    - hospitalId : int
+    - hospitalName : String
+    - location : String
+    - contactNumber : String
+    + addBed()
+    + updateBed()
+    + viewBeds()
+}
+
+class Bed {
+    - bedId : int
+    - bedNumber : String
+    - bedType : String
+    - status : String
+    - floor : int
+    + checkAvailability()
+    + updateStatus()
+}
+
+class Patient {
+    - patientId : int
+    - name : String
+    - age : int
+    - gender : String
+    - contactNumber : String
+    + registerPatient()
+    + updatePatient()
+}
+
+class BedAvailability {
+    - availabilityId : int
+    - bedId : int
+    - status : String
+    - lastUpdated : Date
+    + checkStatus()
+    + updateStatus()
+}
+
+class Admin {
+    - adminId : int
+    - name : String
+    - email : String
+    + manageHospital()
+    + manageBed()
+    + manageUser()
+}
+
+User <|-- Admin
+
+Hospital "1" --> "many" Bed
+Hospital "1" --> "many" Patient
+Bed "1" --> "1" BedAvailability
+Patient "1" --> "1" Bed : assigned to
+Admin --> Hospital : manages
+Admin --> Bed : manages
+User --> Hospital : searches
+User --> BedAvailability : views
+
+@enduml

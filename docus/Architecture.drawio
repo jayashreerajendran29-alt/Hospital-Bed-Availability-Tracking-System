@@ -1,0 +1,17 @@
+@startuml
+
+title Hospital Bed Availability Tracking System
+
+skinparam backgroundColor #111111
+skinparam componentStyle rectangle
+
+rectangle "Frontend\nReact.js" as Frontend
+rectangle "Backend\nSpring Boot" as Backend
+rectangle "Database\nMySQL" as Database
+rectangle "Hospital Bed\nAvailability System" as System
+
+Frontend --> System
+Backend --> System
+Database --> System
+
+@enduml

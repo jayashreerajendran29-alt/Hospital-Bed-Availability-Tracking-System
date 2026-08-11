@@ -1,0 +1,47 @@
+erDiagram
+
+    USER ||--o{ BED_ALLOCATION : manages
+    PATIENT ||--o{ BED_ALLOCATION : receives
+    WARD ||--o{ BED : contains
+    BED ||--o{ BED_ALLOCATION : assigned
+
+    USER {
+        int user_id PK
+        string name
+        string email
+        string password
+        string role
+    }
+
+    PATIENT {
+        int patient_id PK
+        string name
+        int age
+        string gender
+        string phone
+        string address
+    }
+
+    WARD {
+        int ward_id PK
+        string ward_name
+        string ward_type
+        int floor
+    }
+
+    BED {
+        int bed_id PK
+        int ward_id FK
+        string bed_number
+        string bed_type
+        string status
+    }
+
+    BED_ALLOCATION {
+        int allocation_id PK
+        int patient_id FK
+        int bed_id FK
+        date admission_date
+        date discharge_date
+        string status
+    }
